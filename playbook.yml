@@ -1,11 +1,10 @@
- - name : Configure Docker on EC2 Instances
+- name : Configure Docker on EC2 Instances
   hosts : all
   become: true
   connection : ssh
   tasks : 
   - name: updating apt
     command : sudo apt-get update
-
   
   - name: Deploy Docker Container
     command: docker run -itd -p 8082:8081 jayant2327/banking_app:latest
